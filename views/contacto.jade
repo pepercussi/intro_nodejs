@@ -1,0 +1,35 @@
+doctype html
+html
+	include ./layouts/header.jade    
+	body
+		include ./layouts/mnu_top.jade
+
+		main(role="main")
+			div.row.mb-5.mt-5
+				div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+				div.col-xs-10.col-sm-10.col-md-10.col-lg-10
+					br
+					h1 Cont&aacute;ctenos
+
+					div.row
+						div.col-xs-3.col-sm-3.col-md-3.col-lg-3
+						div.col-xs-6.col-sm-6.col-md-6.col-lg-6
+							-var mensaje = '';
+							-if(status == '1'){ mensaje = '<p>Gracias por contactarnos sus datos fueron enviados.</p>';}
+							div!= mensaje
+							form(action="/envia_correo", name="frmContacto", method="post")
+								div.form-group
+									input(type="text", name="txtNombre", placeholder=">Nombre").form-control
+								div.form-group
+									input(type="email", name="txtCorreo", placeholder=">Correo").form-control
+								div.form-group
+									input(type="text", name="txtAsunto", placeholder=">Asunto").form-control
+								div.form-group
+									textarea(name="txtMensaje", rows="4", placeholder=">Mensaje").form-control
+								div.form-group.text-center
+									input(type="submit", name="btnEnviar", value="Enviar").btn.btn-primary
+						div.col-xs-3.col-sm-3.col-md-3.col-lg-3
+
+				div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+
+		include ./layouts/footer.jade
