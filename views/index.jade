@@ -1,0 +1,55 @@
+doctype html
+html
+	include ./layouts/header.jade    
+	body
+		header
+			nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+				a(href="#").navbar-brand TP Node JS
+				button(type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation").navbar-toggler
+					span.navbar-toggler-icon
+				div#navbarCollapse.collapse.navbar-collapse
+					ul.navbar-nav.mr-auto
+						- var clase = ".nav-item";
+						- if(mnuOption == '0'){ clase = '.nav-item.active';}
+						li(class=clase)
+							a(href="/").nav-link Consigna TP
+						li.nav-item
+							a(href="/alumno").nav-link Datos Alumno
+						li.nav-item
+							a(href="#").nav-link Consulta de Productos
+						li.nav-item
+							a(href="#").nav-link Contacto
+
+		main(role="main")
+			div.row.mb-5.mt-5
+				div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+				div.col-xs-10.col-sm-10.col-md-10.col-lg-10
+					br
+					h1 Consigna
+					p Dise&ntilde;ar un servidor NodeJS con Express para hacer el manejo de rutas que pueda servir un sitio con 4 secciones con las siguientes caracter&iacute;sticas y funcionalidad:
+					ul
+						li 2 secciones est&aacute;ticas
+						li 1 secci&oacute;n din&aacute;mica que muestre los datos de una base de datos
+						li 1 secci&oacute;n de contacto
+					p Las secciones est&aacute;ticas pueden llevar el contenido que quieran, desde texto, im&aacute;genes, una galer&iacute;a de fotos, etc.
+					p La secci&oacute;n de din&aacute;mica deber&aacute; mostrar un listado de productos incluyendo nombre, descripci&oacute;n, precio e imagen del mismo. Para ello cuentan con una base de datos con el siguiente dise&ntilde;o:
+					ul
+						li Id: int not null
+						li Nombre: varchar(255)
+						li Descripcion: text
+						li Precio: decimal (10,2)
+						li Imagen: varchar(100)
+					p Se adjunta la base al presente enunciado.
+					p La secci&oacute;n contacto deber&aacute; contener un formulario de contacto a trav&eacute;s del cual se tomen los datos del usuario y se haga el env&iacute;o de mail haciendo uso del paquete nodemailer.js.
+					p Para el frontend pueden utilizar cualquier sistema de plantillas de los que vimos, utilizar HTML y CSS o pueden usar Bootstrap. La base de datos en Mysql.
+					
+					h2 Materializaci&oacute;n de la evaluaci&oacute;n:
+					ul
+						li Deber&aacute;n subir todos los archivos correspondientes a la resoluci&oacute;n de la evaluaci&oacute;n en una carpeta comprimida que contenga todos los archivos necesarios para visualizar correctamente la evaluaci&oacute;n usando como nombre de la carpeta el nombre del alumno.
+						li Puede subirse desde el momento en que se habilita la unidad, hasta la fecha establecida en el apartado de entrega de la evaluaci&oacute;n.
+					
+					p
+						a(href="#").btn.btn-lg.bg-secondary.text-white Descargar Enunciado
+				div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+
+		include ./layouts/footer.jade
