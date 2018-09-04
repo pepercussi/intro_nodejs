@@ -10,8 +10,9 @@ html
 				div.col-xs-10.col-sm-10.col-md-10.col-lg-10
 					br
 					h1 Cont&aacute;ctenos
+					small.blockquote-footer En esta sección veremos un ejemplo de formulario de contacto que hace uso del m&oacute;dulo Nodemailer
 
-					div.row
+					div.row.mt-4
 						div.col-xs-3.col-sm-3.col-md-3.col-lg-3
 						div.col-xs-6.col-sm-6.col-md-6.col-lg-6
 							-var mensaje = '';
@@ -27,7 +28,7 @@ html
 								div.form-group
 									textarea(name="txtMensaje", rows="4", placeholder=">Mensaje").form-control
 								div.form-group.text-center
-									input(type="submit", name="btnEnviar", value="Enviar").btn.btn-primary
+									input(type="submit", name="btnEnviar", value="Enviar").btn.bg-secondary.text-white
 						div.col-xs-3.col-sm-3.col-md-3.col-lg-3
 
 				div.col-xs-1.col-sm-1.col-md-1.col-lg-1
