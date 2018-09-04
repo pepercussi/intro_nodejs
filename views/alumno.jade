@@ -2,21 +2,7 @@ doctype html
 html
 	include ./layouts/header.jade    
 	body
-		header
-			nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-				a(href="#").navbar-brand TP Node JS
-				button(type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation").navbar-toggler
-					span.navbar-toggler-icon
-				div#navbarCollapse.collapse.navbar-collapse
-					ul.navbar-nav.mr-auto
-						li.nav-item
-							a(href="/").nav-link Consigna TP
-						li.nav-item.active
-							a(href="/alumno").nav-link.active Datos Alumno
-						li.nav-item
-							a(href="#").nav-link Consulta de Productos
-						li.nav-item
-							a(href="#").nav-link Contacto
+		include ./layouts/mnu_top.jade
 
 		main(role="main")
 			div.row.mb-5.mt-5

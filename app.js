@@ -3,23 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//-Agrego el módulo de mysql
-var mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
 var alumnoRouter = require('./routes/alumno');
+var productosRouter = require('./routes/productos');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
-//-Configuro la base de datos
-/*var client = mysql.createClient({
-  host: 'localhost',
-  user: 'root',
-  password: ''
-});
-client.database = 'basefinalnode';
-*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/alumno', alumnoRouter);
+app.use('/productos', productosRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

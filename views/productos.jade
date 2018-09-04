@@ -1,0 +1,37 @@
+doctype html
+html
+	include ./layouts/header.jade    
+	body
+		include ./layouts/mnu_top.jade
+
+		main(role="main")
+			div.row.mb-5.mt-5
+				div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+				div.col-xs-10.col-sm-10.col-md-10.col-lg-10
+					br
+					h1 Productos
+
+					if productos.length == 0
+						p Actualmente no existen productos para mostrar
+					else
+						table.table.table-striped.table-hover
+							thead.thead-dark
+								tr
+									th(scope="col") Id
+									th(scope="col") Nombre
+									th(scope="col") Descripci&oacute;n
+									th(scope="col") Precio (ARS)
+									th(scope="col") Imagen
+								for producto in productos
+									tbody
+										tr
+											td(class="align-middle")=producto.id
+											td(class="align-middle")=producto.nombre
+											td(class="align-middle")=producto.descripcion
+											td(class="align-middle")=producto.precio
+											td(class="align-middle")
+												img(src='/img/#{producto.imagen}', alt='#{producto.descripcion}', style='width: 180px;')
+
+				div.col-xs-1.col-sm-1.col-md-1.col-lg-1			
+
+		include ./layouts/footer.jade
