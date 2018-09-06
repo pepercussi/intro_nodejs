@@ -26,9 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/alumno', alumnoRouter);
-app.use('/productos', productosRouter);
+app.use('/bootstrap',express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use('/contacto', contactoRouter);
 app.use('/envia_correo', envia_correoRouter);
+app.use('/productos', productosRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
